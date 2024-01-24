@@ -60,7 +60,8 @@ return
 	  "clang-format",
 	  "codelldb",
 	  "asm_lsp",
-	  "marksman"
+	  "marksman",
+	  "jedi-language-server"
 	}
       }
     },
