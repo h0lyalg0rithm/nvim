@@ -21,6 +21,11 @@ return
 	lspconfig.lua_ls.setup({})
 	lspconfig.marksman.setup({})
 	lspconfig.asm_lsp.setup({})
+	local cmd = { "clangd", '--query-driver=/usr/bin/g++' }
+	lspconfig.clangd.setup({
+           cmd = cmd
+	})
+	vim.lsp.set_log_level("debug")
 	vim.api.nvim_create_autocmd('LspAttach', {
 	  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
 	  callback = function(ev)
@@ -30,8 +35,8 @@ return
 	    -- Buffer local mappings.
 	    -- See `:help vim.lsp.*` for documentation on any of the below functions
 	    local opts = { buffer = ev.buf }
-	    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-	    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+	    --vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+	    --vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
 	    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
 	    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
 	    --vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)

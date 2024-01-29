@@ -44,6 +44,5 @@ end
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 local opt = vim.opt
-
 opt.splitbelow = true
 opt.splitright = true

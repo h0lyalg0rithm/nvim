@@ -33,6 +33,7 @@ return
       }, { prefix = "<leader>" })
       wk.register({
 	["<leader>gd"] = { vim.lsp.buf.definition, "Goto Definition" },
+	["<leader>gD"] = { vim.lsp.buf.declaration, "Goto Decalaration" },
       })
     end,
   }

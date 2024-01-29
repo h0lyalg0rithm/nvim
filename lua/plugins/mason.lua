@@ -29,7 +29,7 @@ return
       opts = {
         handlers = {},
         ensure_installed = {
-          "codelldb"
+	  "codelldb"
         }
       }
     },
@@ -72,7 +72,13 @@ return
 	"neovim/nvim-lspconfig"
       },
       config = function()
-	require("mason-lspconfig").setup()
+	require("mason-lspconfig").setup{
+	  ensure_installed = {
+	    "clangd",
+	    "asm_lsp",
+	    "marksman"
+	  }
+	}
       end
     }
   }
